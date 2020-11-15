@@ -1,0 +1,33 @@
+[submodule ".vim/bundle/all/coc.nvim"]
+	path = .vim/bundle/all/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule ".vim/bundle/all/vim-solarized8"]
+	path = .vim/bundle/all/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
+[submodule ".vim/bundle/all/vim-unimpaired"]
+	path = .vim/bundle/all/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule ".vim/bundle/all/vim-clang-format"]
+	path = .vim/bundle/all/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format.git
+[submodule ".vim/bundle/all/rainbow"]
+	path = .vim/bundle/all/rainbow
+	url = https://github.com/luochen1990/rainbow.git
+[submodule ".vim/bundle/all/vim-commentary"]
+	path = .vim/bundle/all/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/all/vim-cpp-enhanced-highlight"]
+	path = .vim/bundle/all/vim-cpp-enhanced-highlight
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule ".vim/bundle/all/vim-fugitive"]
+	path = .vim/bundle/all/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/all/fzf.vim"]
+	path = .vim/bundle/all/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule ".vim/bundle/all/incsearch.vim"]
+	path = .vim/bundle/all/incsearch.vim
+	url = https://github.com/haya14busa/incsearch.vim.git
+[submodule ".vim/bundle/all/vim-ripgrep"]
+	path = .vim/bundle/all/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep
