@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/all/vim-ripgrep"]
 	path = .vim/bundle/all/vim-ripgrep
 	url = https://github.com/jremmen/vim-ripgrep
+[submodule "ctrlp.vim"]
+	path = ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
