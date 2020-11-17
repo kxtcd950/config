@@ -18,23 +18,23 @@ filetype off                  " required
 " neoclide/coc.vim: practically constantly
 " rhysd/vim-clang-format: practically constantly
 
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
-Plug 'luochen1990/rainbow'
-"vim-colors-solarized requires a symlink to ~/.vim/colors/solarized.vim to be created to work.
-"Plug 'altercation/vim-colors-solarized', { 'do': 'ln -s ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/solarized.vim' }
-Plug 'lifepillar/vim-solarized8'
-Plug 'haya14busa/incsearch.vim'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'rhysd/vim-clang-format'
-Plug 'machakann/vim-sandwich'
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"Plug 'junegunn/fzf'
+"Plug 'junegunn/fzf.vim'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-unimpaired'
+"Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-sensible'
+"Plug 'luochen1990/rainbow'
+""vim-colors-solarized requires a symlink to ~/.vim/colors/solarized.vim to be created to work.
+""Plug 'altercation/vim-colors-solarized', { 'do': 'ln -s ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/solarized.vim' }
+"Plug 'lifepillar/vim-solarized8'
+"Plug 'haya14busa/incsearch.vim'
+"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'rhysd/vim-clang-format'
+"Plug 'machakann/vim-sandwich'
+"call plug#end()
 
 set autoread
 set ts=3 sw=3
