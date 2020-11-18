@@ -128,7 +128,7 @@ endif
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
 
 let g:rainbow_active=1
-let g:rg_window_location='none'
+let g:rg_window_location=''
 nmap <leader>td O// TODO(dave) - <ESC>A
 nnoremap <leader>rg :Rg 
 nnoremap <leader>bn :bNext<CR>
@@ -146,10 +146,15 @@ set background=dark
 " set solarized_termtrans=1
 colorscheme solarized8
 
-if executable("rg")
-   set grepprg=rg\ --vimgrep\ --no-heading
-   set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
+"if executable("rg")
+set grepprg=rg\ --vimgrep\ --no-heading\ --ignore-file=/home/dave/.rgignore
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+"endif
+
+let g:rg_binary='rg'
+let g:rg_format='%f:%l:%c:%m,%f:%l:%m'
+let g:rg_command='rg --vimgrep --no-heading --ignore-file=/home/dave/.rgignore'
+let g:rg_highlight=1
 
 set nomodeline
 
