@@ -135,6 +135,8 @@ nnoremap <leader>bn :bNext<CR>
 nnoremap <leader>bp :bPrev<CR>
 nnoremap <leader>cf :<C-u>ClangFormat<CR>
 vnoremap <leader>cf :ClangFormat<CR>
+nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>P :CtrlPBuffer<CR>
 
 nnoremap <leader><F5> :let &colorcolumn=120-&colorcolumn<CR>
 inoremap <leader><F5> <ESC>:let &colorcolumn=120-&colorcolumn<CR>i
@@ -155,3 +157,11 @@ set nomodeline
 hi CocWarningSign ctermfg=Blue guifg=Yellow ctermbg=Black guibg=Black
 hi CocErrorSign guifg=Red guibg=Black
 hi CocInfoSign guifg=Blue guibg=Black
+
+set wildignore+=tags,Setup*for*.txt,*/tests/*,*/testing/*
+
+let g:ctrlp_custom_ignore = {
+   \ 'dir': '.git',
+   \ 'file': 'NO_IGNORE_FILES',
+   \ 'link': 'NO_SYMBOLIC_LINKS',
+   \ }
