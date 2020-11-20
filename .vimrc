@@ -156,6 +156,8 @@ let g:rg_format='%f:%l:%c:%m,%f:%l:%m'
 let g:rg_command='rg --vimgrep --no-heading --ignore-file=/home/dave/.rgignore'
 let g:rg_highlight=1
 
+let g:clang_format#command = "/usr/bin/clang-format-11"
+
 set nomodeline
 
 " Make Coc.nvim's warnings actually readable
