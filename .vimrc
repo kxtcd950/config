@@ -1,9 +1,14 @@
+if version > 800
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "set t_ut=
+endif
 
 set nocompatible              " be iMproved, required
+if version > 800
 filetype off                  " required
+syntax on
+endif
 
 " Plugin use:
 " fzf & fzf.vim: rarely.
@@ -39,14 +44,16 @@ filetype off                  " required
 set autoread
 set ts=3 sw=3
 set showmatch
-syntax on
 set smarttab
 set shiftwidth=3
+if has("python3")
+if version > 800
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
+endif
+endif
 set laststatus=2
-filetype indent on
 set expandtab
 set encoding=utf8
 set nobackup
@@ -64,10 +71,14 @@ set hls
 set cmdheight=2
 set updatetime=300
 
+if version > 800
+filetype indent on
+endif
+
+
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
@@ -87,7 +98,10 @@ if has("gui_running")
    set guioptions=
 endif
 
+if version > 800
+let g:incsearch#auto_nohlsearch = 1
 let mapleader="\\"
+endif
 
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -105,6 +119,7 @@ nmap <leader>rn <Plug>(coc-rename)
 
 "map <leader>te :tabedit <c-r>=expand(%:p:h)<cr>/
 
+if version > 800
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
@@ -112,6 +127,7 @@ fun! CleanExtraSpaces()
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
+endif
 
 if has("autocmd")
     au BufWritePre *.go,*.txt,*.js,*.py,*.wiki,*.sh,*.c,*.h,*.cpp,*.hpp : call CleanExtraSpaces()
@@ -127,8 +143,10 @@ endif
 
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
 
+if version > 800
 let g:rainbow_active=1
 let g:rg_window_location=''
+endif
 nmap <leader>td O// TODO(dave) - <ESC>A
 nnoremap <leader>rg :Rg 
 nnoremap <leader>bn :bNext<CR>
@@ -151,12 +169,14 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --ignore-file=/home/dave/.rgignore
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 "endif
 
+if version > 800
 let g:rg_binary='rg'
 let g:rg_format='%f:%l:%c:%m,%f:%l:%m'
 let g:rg_command='rg --vimgrep --no-heading --ignore-file=/home/dave/.rgignore'
 let g:rg_highlight=1
 
 let g:clang_format#command = "/usr/bin/clang-format-11"
+endif
 
 set nomodeline
 
@@ -167,8 +187,11 @@ hi CocInfoSign guifg=Blue guibg=Black
 
 set wildignore+=tags,Setup*for*.txt,*/tests/*,*/testing/*
 
+if version > 800
 let g:ctrlp_custom_ignore = {
    \ 'dir': '.git',
    \ 'file': 'NO_IGNORE_FILES',
    \ 'link': 'NO_SYMBOLIC_LINKS',
    \ }
+endif
+
