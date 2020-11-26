@@ -155,6 +155,17 @@ nnoremap <leader>cf :<C-u>ClangFormat<CR>
 vnoremap <leader>cf :ClangFormat<CR>
 nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>P :CtrlPBuffer<CR>
+nmap <leader>qf <Plug>(coc-fix-current)
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostig-next)
 
 nnoremap <leader><F5> :let &colorcolumn=120-&colorcolumn<CR>
 inoremap <leader><F5> <ESC>:let &colorcolumn=120-&colorcolumn<CR>i
