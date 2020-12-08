@@ -1,6 +1,8 @@
 # config
 A repo containing (most) things necessary to bootsrap a new user home directory with useful enough "stuff".
 Assumes python3 is installed, and that a suitably "huge" and current vim is present.
+A new vim is best, compiled from the latest github sources.
+
 Requires some python modules:
 
 ```
