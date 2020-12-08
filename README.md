@@ -42,3 +42,10 @@ If you wish to replace your bashrc, (this bashrc contains a standard Ubuntu cont
 rm ~/.bashrc
 ln -s ${CONFIGROOT}/config/.bashrc .
 ```
+
+To add a git-aware powerline configuration:
+```
+mkdir -p ~/.config
+cd ~/.config
+ln -s ${CONFIGROOT}/config/powerline .
+```
