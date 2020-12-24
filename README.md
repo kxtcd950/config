@@ -38,11 +38,11 @@ ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
 ln -s ${CONFIGROOT}/.dircolors .
 ```
-If you wish to replace your bashrc, (this bashrc contains a standard Ubuntu contents) then also issue:
+If you wish to add custom startup supplied (fzf, powerline, ssh agent support) to
+your bash configuration, then issue:
 
 ```
-rm ~/.bashrc
-ln -s ${CONFIGROOT}/config/.bashrc .
+echo 'source ${CONFIGROOT}/config/.bashrc-custom' >> ~/.bashrc
 ```
 
 To add a git-aware powerline configuration:
