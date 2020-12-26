@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/all/vim-gutentags"]
 	path = .vim/bundle/all/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule ".vim/bundle/all/vim-surround"]
+	path = .vim/bundle/all/vim-surround
+	url = https://github.com/tpope/vim-surround
