@@ -14,6 +14,7 @@ Issue the commands:
 ```
 CONFIGROOT=~/.config/user
 mkdir -p ${CONFIGROOT}
+git clone https://github.com/kxtcd950/config ${CONFIGROOT}/config
 cd ${CONFIGROOT}/config
 
 git submodule init
