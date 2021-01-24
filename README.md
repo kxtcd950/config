@@ -33,7 +33,7 @@ mkdir ../start
 cd ../start
 ln -s ../all/* .
 cd ~/.vim
-ln -s ${CONFIGROOT}/config/coc-settings.json .
+ln -s ${CONFIGROOT}/config/.vim/coc-settings.json .
 cd ~
 ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
