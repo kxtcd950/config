@@ -100,9 +100,13 @@ cd_func ()
 
 alias cd=cd_func
 
+# Always try to add ssh-agent for use.
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
    eval `ssh-agent`
    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+   export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add $(cat ~/.ssh/add-keys)
+# Additionally, if there are any keys to pre-add, add them here.
+if [ -f ~/.ssh/add-keys ]; then
+   ssh-add -l > /dev/null || ssh-add $(cat ~/.ssh/add-keys)
+fi

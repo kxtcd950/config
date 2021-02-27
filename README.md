@@ -14,6 +14,7 @@ Issue the commands:
 ```
 CONFIGROOT=~/.config/user
 mkdir -p ${CONFIGROOT}
+git clone https://github.com/kxtcd950/config ${CONFIGROOT}/config
 cd ${CONFIGROOT}/config
 
 git submodule init
@@ -32,7 +33,7 @@ mkdir ../start
 cd ../start
 ln -s ../all/* .
 cd ~/.vim
-ln -s ${CONFIGROOT}/config/coc-settings.json .
+ln -s ${CONFIGROOT}/config/.vim/coc-settings.json .
 cd ~
 ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
@@ -51,3 +52,5 @@ mkdir -p ~/.config
 cd ~/.config
 ln -s ${CONFIGROOT}/config/powerline .
 ```
+
+Also, worth noting for powerline use: you'll need a terminal which is using a font that has the powerline symbols available.  These are available on the internet, I recommend using "DejaVu Sans Mono for Powerline" on both Linux and Windows.  Instructions for installation are available with the fonts themselves.
