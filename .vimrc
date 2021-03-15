@@ -156,6 +156,7 @@ vnoremap <leader>cf :ClangFormat<CR>
 nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>P :CtrlPBuffer<CR>
 nmap <leader>qf <Plug>(coc-fix-current)
+nmap <leader>gd <Plug>(coc-definition)
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
