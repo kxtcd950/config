@@ -107,7 +107,7 @@ if [ "$?" == 2 ]; then
 
    ssh-add -l &> /dev/null
    if [ "$?" == 2 ]; then
-      eval "$(cat ~/.ssh/.ssh-agent-info)" > /dev/null
+      ssh-agent > "$(cat ~/.ssh/.ssh-agent-info)"
    fi
 fi
 
