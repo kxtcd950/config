@@ -107,7 +107,8 @@ if [ "$?" == 2 ]; then
 
    ssh-add -l &> /dev/null
    if [ "$?" == 2 ]; then
-      ssh-agent > "$(cat ~/.ssh/.ssh-agent-info)"
+      ssh-agent > ~/.ssh/.ssh-agent-info
+      eval $(< ~/.ssh/.ssh-agent-info)
    fi
 fi
 
@@ -115,7 +116,7 @@ fi
 ssh-add -l &> /dev/null
 if [ "$?" == 1 ]; then
    # No identities, add some.
-   ssh-add $(cat ~/.ssh/add-keys)
+   ssh-add $(< ~/.ssh/add-keys)
 else
    if [ "$?" == 2 ]; then
       echo "Session initialisation: Couldn't find running ssh-agent!"
