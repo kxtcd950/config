@@ -100,13 +100,25 @@ cd_func ()
 
 alias cd=cd_func
 
-# Always try to add ssh-agent for use.
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-   eval `ssh-agent`
-   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-   export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l &> /dev/null
+if [ "$?" == 2 ]; then
+   # No currently accessable agent.
+   test -r ~/.ssh/.ssh-agent-info && eval "$(cat ~/.ssh/.ssh-agent-info)" > /dev/null
+
+   ssh-add -l &> /dev/null
+   if [ "$?" == 2 ]; then
+      eval "$(cat ~/.ssh/.ssh-agent-info)" > /dev/null
+   fi
 fi
-# Additionally, if there are any keys to pre-add, add them here.
-if [ -f ~/.ssh/add-keys ]; then
-   ssh-add -l > /dev/null || ssh-add $(cat ~/.ssh/add-keys)
+
+# Now having got an ssh agent running safely, load the identities.
+ssh-add -l &> /dev/null
+if [ "$?" == 1 ]; then
+   # No identities, add some.
+   ssh-add $(cat ~/.ssh/add-keys)
+else
+   if [ "$?" == 2 ]; then
+      echo "Session initialisation: Couldn't find running ssh-agent!"
+   fi
 fi
+

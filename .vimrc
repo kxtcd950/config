@@ -206,4 +206,4 @@ let g:ctrlp_custom_ignore = {
    \ 'link': 'NO_SYMBOLIC_LINKS',
    \ }
 endif
-
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
