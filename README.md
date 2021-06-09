@@ -28,7 +28,7 @@ You'll then need to link the submodules and config files into the correct places
 ```
 mkdir -p ~/.vim/pack/bundle/all
 cd ~/.vim/pack/bundle/all
-ln -s $(CONFIGROOT)/config/.vim/bundle/all/* .
+ln -s ${CONFIGROOT}/config/.vim/bundle/all/* .
 mkdir ../start
 cd ../start
 ln -s ../all/* .
