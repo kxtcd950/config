@@ -61,3 +61,16 @@ ln -s ${CONFIGROOT}/config/powerline .
 ```
 
 Also, worth noting for powerline use: you'll need a terminal which is using a font that has the powerline symbols available.  These are available on the internet, I recommend using "DejaVu Sans Mono for Powerline" on both Linux and Windows.  Instructions for installation are available with the fonts themselves.
+
+To use the pre-canned diff and merge tool integration for meld and git, add:
+```
+[include]
+   path = ~/${CONFIGROOT}/config/.gitconfig-include
+```
+to your ~/.gitconfig file; this will use the fragment in the repo for git's configuration.  This sets up the meld tool as the
+mergetool, difftool and uses the $LOCAL $BASE $REMOTE three window split.  Note that the path to the file must be the expansion
+of ${CONFIGROOT}, rather than the literal text ${CONFIGROOT}.
+This gitconfig fragment also makes the git lg2 command available, which is a highly customised variant of "git log" as well as
+making the .cvsignore file present in the repository a user-global .gitignore file.  .cvsignore was chosen as the filename
+because other tools will use this file name for the same purpose as git would use .gitignore, but git can be configured to use
+this filename too.
