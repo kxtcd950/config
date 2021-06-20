@@ -38,7 +38,14 @@ cd ~
 ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
 ln -s ${CONFIGROOT}/.dircolors .
+ln -s ${CONFIGROOT}/.cvsignore .
+
 ```
+Note that the supplied .cvsignore is suitable for use as a user .gitignore, this can be achieved by running the command:
+```
+git config --user core.excludesfile ~/.cvsignore
+```
+
 If you wish to add custom startup supplied (fzf, powerline, ssh agent support) to
 your bash configuration, then issue:
 
