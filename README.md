@@ -65,7 +65,7 @@ Also, worth noting for powerline use: you'll need a terminal which is using a fo
 To use the pre-canned diff and merge tool integration for meld and git, add:
 ```
 [include]
-   path = ~/${CONFIGROOT}/config/.gitconfig-include
+   path = ${CONFIGROOT}/config/.gitconfig-include
 ```
 to your ~/.gitconfig file; this will use the fragment in the repo for git's configuration.  This sets up the meld tool as the
 mergetool, difftool and uses the $LOCAL $BASE $REMOTE three window split.  Note that the path to the file must be the expansion
