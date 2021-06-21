@@ -60,7 +60,7 @@ set nobackup
 set nowb
 set noswapfile
 set lbr
-set tw=128
+set tw=116
 set ai
 set si
 set wildmenu
@@ -139,7 +139,18 @@ if has("autocmd")
         au bufwritepost .vimrc source ~/.vimrc
     augroup END
     au FileType c,cpp ClangFormatAutoEnable
+    autocmd Filetype gitcommit setlocal spell textwidth=72
 endif
+
+function! SetLEUnix()
+   :w ++ff=unix
+   :e %
+endfunction
+
+function! SetLEDos()
+   :w ++ff=dos
+   :e %
+endfunction
 
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
 
@@ -167,6 +178,7 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostig-next)
+nmap <leader>ffu :call SetLEUnix()<CR>
 
 nnoremap <leader><F5> :let &colorcolumn=120-&colorcolumn<CR>
 inoremap <leader><F5> <ESC>:let &colorcolumn=120-&colorcolumn<CR>i

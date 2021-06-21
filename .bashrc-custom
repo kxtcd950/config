@@ -16,7 +16,14 @@ export MAKEFLAGS=j$(cat /proc/cpuinfo | grep "processor\s*:" | wc -l)
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:${HOME}/.local/bin:$HOME/petalinux-2019.2/tools/xsct/bin"
 
-export PYTHON_LOCAL_MODINST=$(python3 --version | tr -d ' ' | tr 'P' 'p' | awk -F. '{print $1"."$2}')
+PYTHON_VERSION_OVERRIDE=python3.6
+
+if [ "x$PYTHON_VERSION_OVERRIDE" == "x" ];
+then
+   PYTHON_VERSION_OVERRIDE=python3
+fi
+
+export PYTHON_LOCAL_MODINST=$($PYTHON_VERSION_OVERRIDE --version | tr -d ' ' | tr 'P' 'p' | awk -F. '{print $1"."$2}')
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

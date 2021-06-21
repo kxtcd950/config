@@ -6,5 +6,10 @@
 			},
 			"after": "%"
 		}
-	}
+   },
+   "gitstatus": {
+      "args": {
+         "show_tag": "last"
+      }
+   }
 }
