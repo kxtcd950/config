@@ -37,7 +37,7 @@ ln -s ${CONFIGROOT}/config/.vim/coc-settings.json .
 cd ~
 ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
-ln -s ${CONFIGROOT}/.dircolors .
+ln -s ${CONFIGROOT}/config/.dircolors .
 ln -s ${CONFIGROOT}/.cvsignore .
 
 ```
