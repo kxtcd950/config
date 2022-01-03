@@ -37,14 +37,14 @@ ln -s ${CONFIGROOT}/config/.vim/coc-settings.json .
 cd ~
 ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
-ln -s ${CONFIGROOT}/.dircolors .
+ln -s ${CONFIGROOT}/config/.dircolors .
 ln -s ${CONFIGROOT}/.cvsignore .
 ln -s ${CONFIGROOT}/config/clangd .config/clangd
 
 ```
 Note that the supplied .cvsignore is suitable for use as a user .gitignore, this can be achieved by running the command:
 ```
-git config --user core.excludesfile ~/.cvsignore
+git config --global core.excludesfile ~/.cvsignore
 ```
 
 If you wish to add custom startup supplied (fzf, powerline, ssh agent support) to
