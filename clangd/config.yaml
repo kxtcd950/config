@@ -1,0 +1,5 @@
+Diagnostics:
+  ClangTidy:
+    Add: [ modernize-*, readability-function-cognitive-complexity, readability-magic-numbers, cppcoreguidelines-*,
+      clang-analyzer-security.*, clang-analyzer-unix.*, core.*, cplusplus.*, clang-analyzer-*, clang-diagnostic-* ]
+    Remove: [ modernize-use-trailing-return-type ]
