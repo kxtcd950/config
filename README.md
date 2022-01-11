@@ -39,7 +39,8 @@ ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
 ln -s ${CONFIGROOT}/config/.dircolors .
 ln -s ${CONFIGROOT}/.cvsignore .
-ln -s ${CONFIGROOT}/config/clangd .config/clangd
+mkdir -p ~/.config/clangd
+ln -s ${CONFIGROOT}/config/clangd ~/.config/clangd/
 
 ```
 Note that the supplied .cvsignore is suitable for use as a user .gitignore, this can be achieved by running the command:
