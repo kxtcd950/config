@@ -38,7 +38,7 @@ cd ~
 ln -s ${CONFIGROOT}/config/.vimrc .
 ln -s ${CONFIGROOT}/config/.tmux.conf .
 ln -s ${CONFIGROOT}/config/.dircolors .
-ln -s ${CONFIGROOT}/.cvsignore .
+ln -s ${CONFIGROOT}/config/.cvsignore .
 mkdir -p ~/.config/clangd
 ln -s ${CONFIGROOT}/config/clangd ~/.config/clangd/
 
