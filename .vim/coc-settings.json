@@ -2,16 +2,10 @@
    "suggest.autoTrigger": "always",
    "suggest.noselect": true,
     "languageserver": {
-    "clangd": {
-      "command": "clangd-11",
-      "args": ["--background-index"],
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
-    },
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
-      "filetypes": ["sh"],
+      "filetypes": ["sh", "script"],
       "ignoredRootPaths": ["~"]
     }
   }, 

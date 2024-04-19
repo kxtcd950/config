@@ -70,6 +70,7 @@ set hls
 " for coc.vim
 set cmdheight=2
 set updatetime=300
+set number relativenumber
 
 if version > 800
 filetype indent on
@@ -152,13 +153,17 @@ function! SetLEDos()
    :e %
 endfunction
 
+
+command! -bang DS10GFiles call fzf#vim#files('~/ds10g/branch/DS10G/software', <bang>0)
+command! -bang YoctoFiles call fzf#vim#files('~/ds10g/branch/DS10G/yocto', <bang>0)
+
 nnoremap <leader>ev :tabe ~/.vimrc<CR>
 
 if version > 800
 let g:rainbow_active=1
 let g:rg_window_location=''
 endif
-nmap <leader>td O// TODO(dave) - <ESC>A
+nmap <leader>td O// TODO(dmj) - <ESC>A
 nnoremap <leader>rg :Rg 
 nnoremap <leader>bn :bNext<CR>
 nnoremap <leader>bp :bPrev<CR>
@@ -179,6 +184,8 @@ omap ac <Plug>(coc-classobj-a)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostig-next)
 nmap <leader>ffu :call SetLEUnix()<CR>
+nmap <F5> :DS10GFiles<CR>
+nmap <F6> :YoctoFiles<CR>
 
 nnoremap <leader><F5> :let &colorcolumn=120-&colorcolumn<CR>
 inoremap <leader><F5> <ESC>:let &colorcolumn=120-&colorcolumn<CR>i
@@ -187,6 +194,11 @@ set termguicolors
 set background=dark
 " set solarized_termtrans=1
 colorscheme solarized8
+
+"And setup the listchars so I can see whitespace easier.
+nmap <F9> :set invlist<CR>
+set listchars=tab:\-\->,trail:·,extends:>,precedes:<,space:·,eol:󰌑
+hi SpecialKey term=bold cterm=bold ctermfg=81 gui=bold guifg=#404040 guibg=NONE
 
 "if executable("rg")
 set grepprg=rg\ --vimgrep\ --no-heading\ --ignore-file=/home/dave/.rgignore
@@ -199,7 +211,7 @@ let g:rg_format='%f:%l:%c:%m,%f:%l:%m'
 let g:rg_command='rg --vimgrep --no-heading --ignore-file=/home/dave/.cvsignore'
 let g:rg_highlight=1
 
-let g:clang_format#command = "/usr/bin/clang-format-11"
+let g:clang_format#command = "/usr/bin/clang-format-17"
 endif
 
 set nomodeline
@@ -219,3 +231,5 @@ let g:ctrlp_custom_ignore = {
    \ }
 endif
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
