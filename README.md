@@ -70,9 +70,9 @@ To use the pre-canned diff and merge tool integration for meld and git, add:
    path = ${CONFIGROOT}/config/.gitconfig-include
 ```
 to your ~/.gitconfig file; this will use the fragment in the repo for git's configuration.  This sets up the meld tool as the
-mergetool, difftool and uses the $LOCAL $BASE $REMOTE three window split.  Note that the path to the file must be the expansion
+mergetool, difftool and uses the `$LOCAL` `$BASE` `$REMOTE` three window split.  Note that the path to the file must be the expansion
 of ${CONFIGROOT}, rather than the literal text ${CONFIGROOT}.
-This gitconfig fragment also makes the git lg2 command available, which is a highly customised variant of "git log" as well as
-making the .cvsignore file present in the repository a user-global .gitignore file.  .cvsignore was chosen as the filename
-because other tools will use this file name for the same purpose as git would use .gitignore, but git can be configured to use
-this filename too.
+
+This gitconfig fragment also makes the git lg2 command available, which is a highly customised variant of "git log", as well as
+making the .cvsignore file present in the repository.  .cvsignore was chosen as the filename because other tools will use this file 
+name for the same purpose as git would use .gitignore, but git can be configured to use this filename too.
