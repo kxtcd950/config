@@ -62,7 +62,7 @@ cd ~/.config
 ln -s ${CONFIGROOT}/config/powerline .
 ```
 
-Also, worth noting for powerline use: you'll need a terminal which is using a font that has the powerline symbols available.  These are available on the internet, I recommend using "DejaVu Sans Mono for Powerline" on both Linux and Windows.  Instructions for installation are available with the fonts themselves.
+Also, worth noting for powerline use: you'll need a terminal which is using a font that has the powerline symbols available.  These are available on the internet, I recommend using "[DejaVu Sans Mono for Powerline](https://github.com/powerline/fonts/tree/master/DejaVuSansMono)" on both Linux and Windows.  Instructions for installation are available with the fonts themselves.
 
 To use the pre-canned diff and merge tool integration for meld and git, add:
 ```
